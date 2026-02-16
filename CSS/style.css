@@ -164,3 +164,80 @@ body {
     font-weight: bold;
     color: #1e3a8a;
 }
+/* Smaller hero for subpages */
+.small-hero {
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Poster download box */
+.poster-box {
+    margin-top: 30px;
+    padding: 30px;
+    background: #f4f6f9;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* Download button */
+.download-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 25px;
+    background-color: #1e3c72;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+.download-btn:hover {
+    background-color: #2a5298;
+    transform: translateY(-2px);
+}
+
+/* Active sidebar link */
+.sidebar a.active {
+    font-weight: bold;
+    color: #1e3c72;
+}
+/* Society Branding Block */
+.society-brand {
+    position: absolute;
+    top: 25px;
+    right: 40px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    z-index: 3;
+}
+
+.society-brand img {
+    width: 80px;
+    height: auto;
+    opacity: 0.95;
+}
+
+.society-text {
+    display: flex;
+    flex-direction: column;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-align: left;
+    line-height: 1.2;
+    color: white;
+}
+
+.society-text span {
+    display: block;
+}
+
+/* Make hero positioned relative so absolute works */
+.hero {
+    position: relative;
+}
