@@ -8,7 +8,7 @@ body {
 
 /* CENTER PAGE */
 .page-container {
-    width: 1200px;
+    width: 1131px;
     margin: 0 auto;
     background-color: #ffffff;
     box-shadow: 0 0 25px rgba(0,0,0,0.2);
@@ -17,8 +17,9 @@ body {
 /* HEADER */
 .hero {
     position: relative;
-    height: 320px;
-    background: url("../Images/conference.jpg") center/cover no-repeat;
+    height: 279px;
+    width: 1131px;
+    background: url("../Images/PHOTO_FOR_WEB.png") center/cover no-repeat;
     color: white;
     display: flex;
     align-items: center;
@@ -209,7 +210,7 @@ body {
 .society-brand {
     position: absolute;
     top: 25px;
-    right: 40px;
+    left: 40px;   /* moved from right to left */
     display: flex;
     align-items: center;
     gap: 15px;
