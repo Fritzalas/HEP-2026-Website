@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Visas & Invitations | HEP 2026</title>
+    <link rel="stylesheet" href="../CSS/style.css">
+</head>
+<body>
+
+<div class="page-container">
+
+    <!-- HEADER -->
+    <header class="hero small-hero">
+        <div class="overlay"></div>
+
+        <div class="hero-text">
+            <h1>Visas & Invitations</h1>
+            <p class="date-location">HEP 2026 – Athens, 8th–11th July 2026</p>
+        </div>
+
+        <div class="society-brand">
+            <img src="../Images/eesfye_logo_149_133.jpg" alt="HSSHEP Logo">
+            <div class="society-text">
+                <span>HELLENIC</span>
+                <span>SOCIETY</span>
+                <span>for the STUDY</span>
+                <span>of HIGH</span>
+                <span>ENERGY</span>
+                <span>PHYSICS</span>
+            </div>
+        </div>
+    </header>
+
+    <div class="content-wrapper">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <ul>
+                <li><a href="index.html">Welcome</a></li>
+                <li>Scientific Programme</li>
+                <li>Meeting Information</li>
+
+                <li class="dropdown">
+                    <button class="dropdown-btn active">Local Information</button>
+                    <ul class="dropdown-content show">
+                        <li><a href="travel.html">Travel Information</a></li>
+                        <li><a class="active" href="visa.html">Visas & Invitations</a></li>
+                        <li><a href="../Pages/weather.html">Weather</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="poster.html">Conference Poster</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+
+            <section class="info-section">
+
+                <div class="info-card">
+                    <h2>Visa Requirements</h2>
+
+                    <p>
+                        Participants from <strong>Schengen countries, the United States,
+                        and Japan</strong> do not require a visa to travel to Greece.
+                        For US and Japanese citizens, this exemption applies
+                        for stays of up to <strong>90 days</strong>.
+                    </p>
+
+                    <p>
+                        Participants from other countries are advised to consult
+                        the <strong>Greek Embassy or Consulate</strong> in their
+                        country of residence to determine whether a visa or
+                        a formal letter of invitation is required.
+                    </p>
+
+                    <p>
+                        Official information regarding visa requirements can be found at:
+                    </p>
+
+                    <p>
+                        <a href="https://www.mfa.gr/en/visas/visas-for-foreigners-traveling-to-greece"
+                           target="_blank">
+                            Greek Ministry of Foreign Affairs – Visa Information
+                        </a>
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h2>Invitation Letters</h2>
+
+                    <p>
+                        If a letter of invitation is required for your visa application,
+                        please contact the <strong>Local Organizing Committee</strong>.
+                    </p>
+
+                    <div class="visa-highlight">
+                        Participants are strongly encouraged to allow sufficient
+                        time prior to the meeting, as the preparation of the
+                        invitation letter and the overall visa application
+                        process may require several weeks.
+                    </div>
+
+                    <p>
+                        Requests should include your full name, affiliation,
+                        passport details, and presentation status (if applicable).
+                    </p>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const btn = document.querySelector(".dropdown-btn");
+        const content = document.querySelector(".dropdown-content");
+
+        btn.addEventListener("click", function () {
+            content.classList.toggle("show");
+            btn.classList.toggle("active");
+        });
+    });
+</script>
+
+</body>
+</html>

@@ -241,3 +241,138 @@ body {
 .hero {
     position: relative;
 }
+/* ============================= */
+/* STYLISH SIDEBAR DROPDOWN */
+/* ============================= */
+
+.sidebar {
+    overflow: visible;
+}
+
+/* Dropdown container */
+.dropdown {
+    position: relative;
+}
+
+/* Button */
+.dropdown-btn {
+    background: none;
+    border: none;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    padding: 12px 0;
+    color: #222;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.3s ease;
+}
+
+/* Arrow icon */
+.dropdown-btn::after {
+    content: "▸";
+    font-size: 14px;
+    transition: transform 0.3s ease;
+}
+
+/* Rotate arrow when active */
+.dropdown-btn.active::after {
+    transform: rotate(90deg);
+}
+
+/* Hover effect */
+.dropdown-btn:hover {
+    color: #1e3c72;
+    padding-left: 8px;
+}
+
+/* Dropdown content */
+.dropdown-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+    padding-left: 15px;
+}
+
+/* When open */
+.dropdown-content.show {
+    max-height: 200px;
+}
+
+/* Submenu links */
+.dropdown-content li {
+    border: none;
+    padding: 8px 0;
+}
+
+.dropdown-content a {
+    font-size: 14px;
+    color: #555;
+    transition: 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    color: #1e3c72;
+    padding-left: 6px;
+}
+/* Metro Map Image Styling */
+.metro-image {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.metro-image img {
+    width: 100%;
+    max-width: 750px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease;
+}
+
+.metro-image img:hover {
+    transform: scale(1.02);
+}
+/* Lunch Section Grid */
+.lunch-grid {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Text column */
+.lunch-text {
+    flex: 1;
+    min-width: 280px;
+}
+
+/* Image column */
+.lunch-image {
+    flex: 1;
+    text-align: center;
+    min-width: 280px;
+}
+
+.lunch-image img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 12px;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease;
+}
+
+.lunch-image img:hover {
+    transform: scale(1.02);
+}
+/* Visa Highlight Box */
+.visa-highlight {
+    background: #eef3fa;
+    border-left: 4px solid #1e3c72;
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 8px;
+    font-weight: 500;
+}

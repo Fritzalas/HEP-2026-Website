@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Weather | HEP 2026</title>
+  <link rel="stylesheet" href="../CSS/style.css">
+</head>
+<body>
+
+<div class="page-container">
+
+  <!-- HEADER -->
+  <header class="hero small-hero">
+    <div class="overlay"></div>
+
+    <div class="hero-text">
+      <h1>Weather in Athens</h1>
+      <p class="date-location">HEP 2026 – Athens, 8th–11th July 2026</p>
+    </div>
+
+    <div class="society-brand">
+      <img src="../Images/eesfye_logo_149_133.jpg" alt="HSSHEP Logo">
+      <div class="society-text">
+        <span>HELLENIC</span>
+        <span>SOCIETY</span>
+        <span>for the STUDY</span>
+        <span>of HIGH</span>
+        <span>ENERGY</span>
+        <span>PHYSICS</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="content-wrapper">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <ul>
+        <li><a href="index.html">Welcome</a></li>
+        <li>Scientific Programme</li>
+        <li>Meeting Information</li>
+
+        <li class="dropdown">
+          <button class="dropdown-btn active">Local Information</button>
+          <ul class="dropdown-content show">
+            <li><a href="travel.html">Travel Information</a></li>
+            <li><a href="visa.html">Visas & Invitations</a></li>
+            <li><a class="active" href="weather.html">Weather</a></li>
+          </ul>
+        </li>
+
+        <li><a href="poster.html">Conference Poster</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+      <section class="info-section">
+
+        <div class="info-card">
+          <h2>Climate Overview</h2>
+
+          <p>
+            Athens has a typical <strong>Mediterranean climate</strong>,
+            characterised by hot, dry summers and mild winters.
+          </p>
+
+          <p>
+            In <strong>July</strong>, average daytime temperatures are around
+            <strong>30°C</strong>, while evening temperatures are
+            typically <strong>22–24°C</strong>.
+          </p>
+
+          <p>
+            Rainfall is very limited during this period. Participants
+            are advised to bring light summer clothing, sunscreen,
+            and a light jacket for cooler evenings.
+          </p>
+        </div>
+
+        <div class="info-card">
+          <h2>Current Forecast</h2>
+
+          <p>
+            Current weather conditions and forecasts for Athens
+            are available at:
+          </p>
+
+          <p>
+            <a href="https://www.accuweather.com/en/gr/athens/182536/weather-forecast/182536" target="_blank">
+              AccuWeather.com
+            </a>
+          </p>
+        </div>
+
+      </section>
+
+    </main>
+
+  </div>
+
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const btn = document.querySelector(".dropdown-btn");
+    const content = document.querySelector(".dropdown-content");
+
+    btn.addEventListener("click", function () {
+      content.classList.toggle("show");
+      btn.classList.toggle("active");
+    });
+  });
+</script>
+
+</body>
+</html>
