@@ -38,9 +38,23 @@
       <ul>
         <li><a href="index.html">Welcome</a></li>
         <li>Scientific Programme</li>
-        <li>Meeting Information</li>
         <li class="dropdown">
-          <button class="dropdown-btn">Local Information ▾</button>
+          <button class="dropdown-btn">Meeting Information</button>
+          <ul class="dropdown-content">
+            <li>
+              <a href="https://indico.cern.ch/event/1223490/registrations/89115/" target="_blank">
+                Registration
+              </a>
+            </li>
+            <li>
+              <a href="https://indico.cern.ch/event/1223490/registrations/participants" target="_blank">
+                Participation List
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <button class="dropdown-btn">Local Information</button>
           <ul class="dropdown-content">
             <li><a href="../Pages/travel.html">Travel Information</a></li>
             <li><a href="../Pages/visa.html">Visas & Invitations</a></li>
@@ -79,12 +93,16 @@
 </div>
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-    const btn = document.querySelector(".dropdown-btn");
-    const content = document.querySelector(".dropdown-content");
+    const dropdowns = document.querySelectorAll(".dropdown");
 
-    btn.addEventListener("click", function () {
-      content.classList.toggle("show");
-      btn.classList.toggle("active");
+    dropdowns.forEach(dropdown => {
+      const btn = dropdown.querySelector(".dropdown-btn");
+      const content = dropdown.querySelector(".dropdown-content");
+
+      btn.addEventListener("click", function () {
+        content.classList.toggle("show");
+        btn.classList.toggle("active");
+      });
     });
   });
 </script>
