@@ -136,3 +136,31 @@ body {
 .sidebar a:hover {
     text-decoration: none;   /* keeps underline from appearing on hover */
 }
+/* Contact Page Styling */
+.small-hero {
+    height: 220px;
+}
+
+.contact-email {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+.contact-email a {
+    color: #1e3a8a;
+    text-decoration: none;
+    border-bottom: 2px solid #1e3a8a;
+    transition: 0.3s ease;
+}
+
+.contact-email a:hover {
+    color: #0f172a;
+    border-bottom: 2px solid #0f172a;
+}
+
+/* Active sidebar link */
+.sidebar a.active {
+    font-weight: bold;
+    color: #1e3a8a;
+}
