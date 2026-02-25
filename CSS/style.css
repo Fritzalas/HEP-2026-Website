@@ -377,3 +377,38 @@ body {
     border-radius: 8px;
     font-weight: 500;
 }
+.committee {
+    margin-top: 40px;
+    padding: 30px;
+    background: #f8f9fb;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.committee h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+    color: #1d3557;
+    letter-spacing: 0.5px;
+}
+
+.committee-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 12px 30px;
+    font-size: 1.05rem;
+    color: #333;
+}
+
+.committee-grid div {
+    padding: 8px 0;
+    border-bottom: 1px solid #e2e6ea;
+    text-align: center;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.committee-grid div:hover {
+    transform: translateY(-2px);
+    color: #0b3d91;
+}
