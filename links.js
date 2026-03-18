@@ -14,4 +14,8 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("link-participants").href =
         base + CONFIG.indico.participants;
 
+    const registerBtn = document.getElementById("register_init_btn");
+    registerBtn.addEventListener("click", function() {
+        window.location.href = base + CONFIG.indico.registration;
+    });
 });
