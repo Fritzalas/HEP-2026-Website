@@ -46,7 +46,7 @@
                 <li><a href="index.html">Welcome</a></li>
 
                 <li class="dropdown">
-                    <button class="dropdown-btn">Scientific Programme</button>
+                    <button class="dropdown-btn" type="button">Scientific Programme</button>
                     <ul class="dropdown-content">
                         <li>
                             <a id="link-timetable" href="#" target="_blank">Timetable</a>
@@ -58,7 +58,7 @@
                 </li>
 
                 <li class="dropdown">
-                    <button class="dropdown-btn">Meeting Information</button>
+                    <button class="dropdown-btn" type="button">Meeting Information</button>
                     <ul class="dropdown-content">
                         <li>
                             <a id="link-registration" href="#" target="_blank">Registration</a>
@@ -70,7 +70,7 @@
                 </li>
 
                 <li class="dropdown">
-                    <button class="dropdown-btn">Local Information</button>
+                    <button class="dropdown-btn" type="button">Local Information</button>
                     <ul class="dropdown-content">
                         <li><a href="Pages/travel.html">Travel Information</a></li>
                         <li><a href="Pages/visa.html">Visas & Invitations</a></li>
@@ -88,7 +88,7 @@
 
             <div class="heading-with-button">
                 <h1>Welcome</h1>
-                <button id="register_init_btn" class="register-btn">
+                <button id="register_init_btn" class="register-btn" type="button">
                     Register
                 </button>
             </div>
@@ -114,6 +114,40 @@
                 especially encouraged to participate, while distinguished international
                 colleagues are invited to present cutting-edge topics.
             </p>
+
+            <section class="info-panels">
+                <div class="info-card important-dates">
+                    <h2>Important Dates</h2>
+                    <div class="dates-list">
+                        <div class="date-row">
+                            <div class="date">March 23, 2026</div>
+                            <div class="event">Abstract submission is open!</div>
+                        </div>
+                        <div class="date-row">
+                            <div class="date">June 5, 2026</div>
+                            <div class="event">Abstract deadline</div>
+                        </div>
+                        <div class="date-row">
+                            <div class="date">March 10, 2026</div>
+                            <div class="event">Registration opens</div>
+                        </div>
+                        <div class="date-row">
+                            <div class="date">-</div>
+                            <div class="event">Registration deadline</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-card quick-links-card">
+                    <h2>Quick Links</h2>
+                    <div class="quick-links-list">
+                        <a href="https://fritzalas.github.io/HEP_2026_Links/" target="_blank" class="quick-link">Flyer</a>
+                        <a id="link-registration-quick" href="#" target="_blank" class="quick-link">
+                            Submit Abstracts &amp; Register
+                        </a>
+                    </div>
+                </div>
+            </section>
 
             <section class="committee">
                 <h2>Local Organising Committee</h2>
@@ -155,6 +189,13 @@
                 btn.classList.toggle("active");
             });
         });
+
+        const quickRegistrationLink = document.getElementById("link-registration-quick");
+        const mainRegistrationLink = document.getElementById("link-registration");
+
+        if (quickRegistrationLink && mainRegistrationLink) {
+            quickRegistrationLink.href = mainRegistrationLink.href;
+        }
     });
 </script>
 </body>
