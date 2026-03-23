@@ -8,3 +8,8 @@ const CONFIG = {
         participants: "/registrations/participants"
     }
 };
+window.EMAILJS_CONFIG = {
+    PUBLIC_KEY: "0zgSO6wgBCz4cGsrb",
+    SERVICE_ID: "service_0pdmeyr",
+    TEMPLATE_ID: "template_s1c773g"
+};

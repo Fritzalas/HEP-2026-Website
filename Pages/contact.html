@@ -3,11 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <title>Contact | HEP 2026</title>
-  <link rel="stylesheet" href="../CSS/style.css?v=2">
+  <link rel="stylesheet" href="../CSS/style.css?v=3">
 </head>
 <body>
 <script src="../config.js?v=2"></script>
 <script src="../links.js?v=2"></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
 <div class="page-container">
 
@@ -16,6 +17,7 @@
     <div class="overlay"></div>
     <div class="hero-text">
       <h1>Contact</h1>
+      <p>Get in touch with the Local Organising Committee</p>
     </div>
 
     <!-- Society Branding -->
@@ -76,20 +78,72 @@
     </aside>
 
     <!-- MAIN CONTENT -->
-    <main class="main-content">
+    <main class="main-content contact-page">
 
-      <h1>Contact</h1>
+      <div class="contact-header-block">
+        <h1>Contact</h1>
+        <p class="lead">
+          For questions regarding the meeting, please contact the Local Organising Committee.
+        </p>
+      </div>
 
-      <p class="lead">
-        For questions regarding the meeting, please contact the
-        Local Organizing Committee by e-mail:
-      </p>
+      <div class="contact-info-card">
+        <div class="contact-info-label">Official contact e-mail</div>
+        <p class="contact-email">
+          <a href="mailto:HEPNTUA2026@outlook.com">HEPNTUA2026@outlook.com</a>
+        </p>
+      </div>
 
-      <p class="contact-email">
-        <a href="mailto:HEPNTUA2026@outlook.com">
-          HEPNTUA2026@outlook.com
-        </a>
-      </p>
+      <section class="contact-form-card">
+        <h2>Send us a message</h2>
+
+        <form id="contact-form" novalidate>
+          <div class="form-grid">
+            <div class="form-field">
+              <label for="name">Name <span>*</span></label>
+              <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-field">
+              <label for="email">Email <span>*</span></label>
+              <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      required
+                      pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}"
+                      title="Please enter a valid email address"
+              >
+            </div>
+
+            <div class="form-field">
+              <label for="subject">Subject <span>*</span></label>
+              <input type="text" id="subject" name="subject" required>
+            </div>
+
+            <div class="form-field">
+              <label for="phone">Phone</label>
+              <input type="text" id="phone" name="phone">
+            </div>
+
+            <div class="form-field form-field-full">
+              <label for="institution">Institution</label>
+              <input type="text" id="institution" name="institution">
+            </div>
+
+            <div class="form-field form-field-full">
+              <label for="message">Message <span>*</span></label>
+              <textarea id="message" name="message" rows="7" required></textarea>
+              <div class="form-meta">
+                <p id="message-counter">0 / 1500 words</p>
+              </div>
+            </div>
+          </div>
+
+          <button type="submit" id="send-btn" class="contact-submit-btn">Send Message</button>
+          <p id="form-status" class="form-status" aria-live="polite"></p>
+        </form>
+      </section>
 
     </main>
 
@@ -100,8 +154,14 @@
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     const dropdowns = document.querySelectorAll(".dropdown");
+    const form = document.getElementById("contact-form");
+    const status = document.getElementById("form-status");
+    const sendBtn = document.getElementById("send-btn");
+    const textarea = document.getElementById("message");
+    const counter = document.getElementById("message-counter");
+    const emailInput = document.getElementById("email");
 
-    dropdowns.forEach(dropdown => {
+    dropdowns.forEach(function (dropdown) {
       const btn = dropdown.querySelector(".dropdown-btn");
       const content = dropdown.querySelector(".dropdown-content");
 
@@ -109,6 +169,116 @@
         content.classList.toggle("show");
         btn.classList.toggle("active");
       });
+    });
+
+    function countWords(text) {
+      const trimmed = text.trim();
+      if (!trimmed) {
+        return 0;
+      }
+      return trimmed.split(/\s+/).length;
+    }
+
+    function updateMessageUI() {
+      let words = countWords(textarea.value);
+
+      if (words > 1500) {
+        textarea.value = textarea.value.trim().split(/\s+/).slice(0, 1500).join(" ");
+        words = 1500;
+      }
+
+      textarea.style.height = "auto";
+      textarea.style.height = textarea.scrollHeight + "px";
+
+      counter.textContent = words + " / 1500 words";
+      counter.classList.toggle("warning", words > 1400);
+    }
+
+    function setStatus(message, type) {
+      status.textContent = message;
+      status.className = "form-status";
+      if (type) {
+        status.classList.add(type);
+      }
+    }
+
+    function validateForm() {
+      const words = countWords(textarea.value);
+
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return false;
+      }
+
+      if (!emailInput.checkValidity()) {
+        setStatus("Please enter a valid email address.", "error");
+        emailInput.focus();
+        return false;
+      }
+
+      if (words === 0) {
+        setStatus("Message cannot be empty.", "error");
+        textarea.focus();
+        return false;
+      }
+
+      if (words > 1500) {
+        setStatus("Message exceeds 1500 words.", "error");
+        textarea.focus();
+        return false;
+      }
+
+      return true;
+    }
+
+    textarea.addEventListener("input", updateMessageUI);
+
+    emailInput.addEventListener("input", function () {
+      if (emailInput.value === "" || emailInput.checkValidity()) {
+        emailInput.classList.remove("invalid");
+      } else {
+        emailInput.classList.add("invalid");
+      }
+    });
+
+    updateMessageUI();
+
+    emailjs.init({
+      publicKey: EMAILJS_CONFIG.PUBLIC_KEY
+    });
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      if (!validateForm()) {
+        return;
+      }
+
+      sendBtn.disabled = true;
+      setStatus("Sending...", "info");
+
+      emailjs.sendForm(
+              EMAILJS_CONFIG.SERVICE_ID,
+              EMAILJS_CONFIG.TEMPLATE_ID,
+              form,
+              {
+                publicKey: EMAILJS_CONFIG.PUBLIC_KEY
+              }
+      )
+              .then(function () {
+                form.reset();
+                emailInput.classList.remove("invalid");
+                textarea.style.height = "auto";
+                updateMessageUI();
+                setStatus("Your message has been sent successfully.", "success");
+              })
+              .catch(function (error) {
+                console.error("EmailJS error:", error);
+                setStatus("Sorry, the message could not be sent. Please try again.", "error");
+              })
+              .finally(function () {
+                sendBtn.disabled = false;
+              });
     });
   });
 </script>
