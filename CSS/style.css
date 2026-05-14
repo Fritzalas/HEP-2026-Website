@@ -828,3 +828,10 @@ body {
     overflow-y: hidden;
     box-sizing: border-box;
 }
+.logo-box {
+    background: white;
+    padding: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
