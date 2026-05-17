@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hotels & Accommodation | HEP 2026</title>
-    <link rel="stylesheet" href="../CSS/style.css?v=5">
+    <link rel="stylesheet" href="../CSS/style.css?v=9">
 </head>
 <body>
 
@@ -31,8 +32,11 @@
     </header>
 
     <div class="content-wrapper">
+        <button class="mobile-menu-btn" type="button" aria-label="Open menu">
+            ☰ Menu
+        </button>
 
-        <aside class="sidebar">
+        <aside class="sidebar" id="mobile-sidebar">
             <ul>
                 <li><a href="../index.html">Welcome</a></li>
 
@@ -171,14 +175,23 @@
 
 </div>
 
-<script src="../config.js?v=3"></script>
-<script src="../links.js?v=3"></script>
+<script src="../config.js?v=4"></script>
+<script src="../links.js?v=4"></script>
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {
-        const dropdowns = document.querySelectorAll(".dropdown");
 
-        dropdowns.forEach(dropdown => {
+        const sidebar = document.getElementById("mobile-sidebar");
+        const menuBtn = document.querySelector(".mobile-menu-btn");
+
+        if (menuBtn && sidebar) {
+            menuBtn.addEventListener("click", function () {
+                sidebar.classList.toggle("mobile-open");
+            });
+        }
+
+        document.querySelectorAll(".dropdown").forEach(dropdown => {
+
             const btn = dropdown.querySelector(".dropdown-btn");
             const content = dropdown.querySelector(".dropdown-content");
 
@@ -186,7 +199,9 @@
                 content.classList.toggle("show");
                 btn.classList.toggle("active");
             });
+
         });
+
     });
 </script>
 

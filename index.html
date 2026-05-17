@@ -2,12 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HEP 2026 | High Energy Physics and Cosmology</title>
-    <link rel="stylesheet" href="CSS/style.css?v=5">
+    <link rel="stylesheet" href="CSS/style.css?v=7">
 </head>
 <body>
-<script src="config.js?v=4"></script>
-<script src="links.js?v=4"></script>
+<script src="config.js?v=5"></script>
+<script src="links.js?v=5"></script>
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
 <div class="page-container">
@@ -45,8 +46,12 @@
 
     <div class="content-wrapper">
 
+        <button class="mobile-menu-btn" type="button" aria-label="Open menu">
+            ☰ Menu
+        </button>
+
         <!-- SIDEBAR -->
-        <aside class="sidebar">
+        <aside class="sidebar" id="mobile-sidebar">
             <ul>
                 <li><a href="index.html">Welcome</a></li>
 
@@ -181,12 +186,18 @@
     </div>
 
 </div>
-
 <script>
     document.addEventListener("DOMContentLoaded", function () {
-        const dropdowns = document.querySelectorAll(".dropdown");
+        const sidebar = document.getElementById("mobile-sidebar");
+        const menuBtn = document.querySelector(".mobile-menu-btn");
 
-        dropdowns.forEach(dropdown => {
+        if (menuBtn && sidebar) {
+            menuBtn.addEventListener("click", function () {
+                sidebar.classList.toggle("mobile-open");
+            });
+        }
+
+        document.querySelectorAll(".dropdown").forEach(dropdown => {
             const btn = dropdown.querySelector(".dropdown-btn");
             const content = dropdown.querySelector(".dropdown-content");
 
