@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sponsors | HEP 2026</title>
+    <link rel="stylesheet" href="../CSS/style.css?v=12">
+</head>
+<body>
+
+<div class="page-container">
+
+    <header class="hero small-hero">
+        <div class="overlay"></div>
+
+        <div class="society-brand">
+            <div class="logo-box">
+                <img src="../Images/Εθνικό_Μετσόβειο_Πολυτεχνείο.svg.png?v=1" alt="NTUA Logo" class="ntua-logo">
+            </div>
+
+            <img src="../Images/eesfye_logo_149_133.jpg?v=2" alt="HSSHEP Logo" class="hsshep-logo">
+
+            <div class="society-text">
+                <span>HELLENIC</span>
+                <span>SOCIETY</span>
+                <span>for the STUDY</span>
+                <span>of HIGH</span>
+                <span>ENERGY</span>
+                <span>PHYSICS</span>
+            </div>
+        </div>
+    </header>
+
+    <div class="content-wrapper">
+        <button class="mobile-menu-btn" type="button" aria-label="Open menu">
+            ☰ Menu
+        </button>
+
+        <aside class="sidebar" id="mobile-sidebar">
+            <ul>
+                <li><a href="../index.html">Welcome</a></li>
+
+                <li class="dropdown">
+                    <button class="dropdown-btn" type="button">Scientific Programme</button>
+                    <ul class="dropdown-content">
+                        <li><a id="link-timetable" href="#" target="_blank">Timetable</a></li>
+                        <li><a id="link-speakers" href="#" target="_blank">Speakers</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <button class="dropdown-btn" type="button">Meeting Information</button>
+                    <ul class="dropdown-content">
+                        <li><a id="link-registration" href="#" target="_blank">Registration</a></li>
+                        <li><a id="link-participants" href="#" target="_blank">Participation List</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <button class="dropdown-btn" type="button">Local Information</button>
+                    <ul class="dropdown-content">
+                        <li><a href="travel.html">Travel Information</a></li>
+                        <li><a href="visa.html">Visas & Invitations</a></li>
+                        <li><a href="hotels.html">Hotels & Accommodation</a></li>
+                        <li><a href="weather.html">Weather</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="poster.html">Conference Poster</a></li>
+                <li><a href="https://indico.cern.ch/event/1654737/page/43162-proceedings">Proceedings</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="sponsors.html" class="active-link">Sponsors</a></li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+
+            <h1>Sponsors</h1>
+
+            <p class="lead">
+                HEP 2026 gratefully acknowledges the support of its sponsors and
+                institutional partners.
+            </p>
+
+            <section class="sponsors-hero-card">
+                <div>
+                    <h2>Hosted by the National Technical University of Athens</h2>
+                    <p>
+                        The National Technical University of Athens supports the
+                        organisation of HEP 2026 and welcomes participants to Athens.
+                    </p>
+                </div>
+
+                <img
+                        src="../Images/Εθνικό_Μετσόβειο_Πολυτεχνείο.svg.png?v=1"
+                        alt="National Technical University of Athens Logo"
+                >
+            </section>
+
+            <section class="sponsors-section">
+                <h2>Conference Sponsors</h2>
+
+                <article class="sponsor-card featured-sponsor">
+                    <img
+                            src="../Images/ES_LOGO_notagline.png?v=1"
+                            alt="ES Systems"
+                            class="sponsor-logo"
+                    >
+
+                    <div class="sponsor-card-body">
+                        <span class="sponsor-tag">Official Sponsor</span>
+
+                        <h2>ES Systems</h2>
+
+                        <p>
+                            HEP 2026 gratefully acknowledges the support of ES Systems
+                            for contributing to the success of the conference.
+                        </p>
+
+                        <a href="https://esenssys.com/" target="_blank" class="sponsor-link">
+                            Visit Website
+                        </a>
+                    </div>
+                </article>
+            </section>
+
+        </main>
+
+    </div>
+
+</div>
+
+<script src="../config.js?v=4"></script>
+<script src="../links.js?v=4"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+        const sidebar = document.getElementById("mobile-sidebar");
+        const menuBtn = document.querySelector(".mobile-menu-btn");
+
+        if (menuBtn && sidebar) {
+            menuBtn.addEventListener("click", function () {
+                sidebar.classList.toggle("mobile-open");
+            });
+        }
+
+        document.querySelectorAll(".dropdown").forEach(dropdown => {
+
+            const btn = dropdown.querySelector(".dropdown-btn");
+            const content = dropdown.querySelector(".dropdown-content");
+
+            btn.addEventListener("click", function () {
+                content.classList.toggle("show");
+                btn.classList.toggle("active");
+            });
+
+        });
+
+    });
+</script>
+
+</body>
+</html>

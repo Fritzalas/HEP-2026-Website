@@ -1056,3 +1056,149 @@ body {
         white-space: nowrap;
     }
 }
+/* Sponsors */
+
+.sponsors-hero-card {
+    display: grid;
+    grid-template-columns: 1fr 180px;
+    align-items: center;
+    gap: 30px;
+    margin: 30px 0;
+    padding: 35px;
+    border-radius: 18px;
+    background: linear-gradient(135deg, #f7fbff, #ffffff);
+    border: 1px solid rgba(16, 37, 66, 0.08);
+    box-shadow: 0 10px 30px rgba(16, 37, 66, 0.10);
+}
+
+.sponsors-hero-card h2 {
+    margin-bottom: 12px;
+    color: #102542;
+}
+
+.sponsors-hero-card img {
+    max-width: 170px;
+    justify-self: center;
+}
+
+.sponsors-section {
+    margin-top: 40px;
+}
+
+.sponsors-section > h2 {
+    margin-bottom: 20px;
+}
+
+.sponsors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 360px));
+    gap: 25px;
+}
+
+.sponsor-card {
+    overflow: hidden;
+    border-radius: 18px;
+    background: #ffffff;
+    border: 1px solid rgba(16, 37, 66, 0.08);
+    box-shadow: 0 10px 30px rgba(16, 37, 66, 0.10);
+}
+
+.sponsor-logo-placeholder {
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 25px;
+    border: 2px dashed #b7c5d8;
+    border-radius: 15px;
+    background: #f8fbff;
+    color: #6b7c93;
+    font-weight: 700;
+}
+
+.sponsor-card-body {
+    padding: 0 25px 28px;
+}
+
+.sponsor-tag {
+    display: inline-block;
+    margin-bottom: 10px;
+    padding: 5px 12px;
+    border-radius: 999px;
+    background: #eef5ff;
+    color: #1f4e79;
+    font-size: 0.82rem;
+    font-weight: 700;
+}
+
+.sponsor-card-body h2 {
+    color: #102542;
+    margin-bottom: 8px;
+}
+
+.sponsor-card-body p {
+    color: #526274;
+}
+
+@media (max-width: 768px) {
+    .sponsors-hero-card {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 25px;
+    }
+}
+.featured-sponsor {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 50px 40px;
+    text-align: center;
+}
+
+.sponsor-logo {
+    display: block;
+    width: auto;
+    height: auto;
+
+    max-width: 550px;     /* increase this */
+    max-height: 220px;    /* increase this */
+
+    object-fit: contain;
+    margin: 0 auto 35px;
+}
+
+.sponsor-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 8px;
+    padding: 13px 28px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #1f4e79, #102542);
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    box-shadow: 0 8px 22px rgba(16, 37, 66, 0.22);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.sponsor-link::after {
+    content: "↗";
+    font-size: 0.95rem;
+}
+
+.sponsor-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(16, 37, 66, 0.30);
+}
+
+@media (max-width: 768px) {
+    .sponsor-logo {
+        max-width: 240px;
+        max-height: 95px;
+    }
+
+    .featured-sponsor {
+        padding: 35px 22px;
+    }
+}
