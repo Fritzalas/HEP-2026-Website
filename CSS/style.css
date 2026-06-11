@@ -1202,3 +1202,63 @@ body {
         padding: 35px 22px;
     }
 }
+.sponsors-logo-carousel {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 220px;
+
+    background: linear-gradient(135deg,#fff,#f7f9fc);
+    border-radius: 25px;
+    box-shadow: 0 10px 35px rgba(0,0,0,.08);
+}
+
+.sponsors-logo-track {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+
+    position: absolute;
+    left: 0;
+    top: 50%;
+
+    transform: translateY(-50%);
+    animation: sponsor-scroll 15s linear infinite;
+}
+
+.sponsor-logo-item {
+    width: 260px;
+    height: 140px;
+
+    flex-shrink: 0;
+
+    background: white;
+    border-radius: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: 0 8px 25px rgba(0,0,0,.08);
+
+    transition: .4s;
+}
+
+.sponsor-logo-item:hover {
+    transform: translateY(-10px) scale(1.05);
+}
+
+.sponsor-logo-item img {
+    max-width: 170px;
+    max-height: 80px;
+    object-fit: contain;
+}
+
+@keyframes sponsor-scroll {
+    from {
+        transform: translateY(-50%) translateX(0);
+    }
+    to {
+        transform: translateY(-50%) translateX(-600px);
+    }
+}
